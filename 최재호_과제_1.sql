@@ -38,4 +38,27 @@ select emp_name from employee where emp_name like '%연';
 select emp_name, phone from employee where not phone like '010%';
 
 --14. EMPLOYEE테이블에서 메일주소 '_'의 앞이 4자이면서 DEPT_CODE가 D9 또는 D6이고 고용일이 90/01/01 ~ 00/12/01이고, 급여가 270만 이상인 사원의 전체를 조회
-select * from employee where email like '____$_%' escape '$' and dept_code in ('D9', 'D6') and (hire_date between '90/01/01' and '00/12/01') and salary >= 2700000;  
+select * from employee where email like '____$_%' escape '$' and dept_code in ('D9', 'D6') and (hire_date between '90/01/01' and '00/12/01') and salary >= 2700000;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

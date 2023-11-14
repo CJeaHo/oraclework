@@ -40,7 +40,10 @@ alter user aie default TABLESPACE users quota unlimited on users;
 --테이블 스페이스의 영역을 특정 용량만큼 할당하려면 (잘 사용안함)
 alter user user1 quota 30M on users;
 
-
+alter session set "_oracle_script" = true;
+create user workbook identified by workbook;
+grant resource, connect to workbook;
+alter user workbook default tablespace users quota unlimited on users;
 
 
 

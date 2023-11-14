@@ -260,7 +260,7 @@ select * from employee where (salary between 2000000 and 5000000) and hire_date 
 -- 5. 보너스 포함 연봉이 null이 아니고 이름에 '하'가 포함되어 있는 사원들의 사번, 사원명, 급여, 보너스포함 연봉 조회(별칭 부여)
 select emp_id "사번", emp_name "사원명", salary "급여", (salary+bonus*salary)*12 "보너스포함 연봉" from employee where bonus is not null and emp_name like '%하%';
 
----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /*
 <order by 절> 정렬
@@ -271,13 +271,13 @@ select 컬럼1, 컬럼2, ... from where order by 정렬기준이 되는 컬럼�
 asc 오름차순(기본값)
 desc 내림차순
 
-nulls first 정렬하고자 하는 컬럼값에 null이 있는 경우 해당 데이터를 맨 앞에 배치(생략시 desc일 때는 기본값)
-nulls last 정렬하고자 하는 컬럼값에 null이 있는 경우 해당 데이터를 맨 뒤에 배치(생략시 asc일 때는 기본값)
+nulls first 정렬하고자 하는 컬럼값에 null이 있는 경우 해당 데이터를 맨 앞에 배치(생략시 desc일 때는 기본값으로 null이 제일 앞에)
+nulls last 정렬하고자 하는 컬럼값에 null이 있는 경우 해당 데이터를 맨 뒤에 배치(생략시 asc일 때는 기본값으로 null이 제일 뒤에)
 */
 
 -- 보너스로 정렬
 select * from employee
--- order by bonus;  오름차순 기본값으로 null이 끝에 옴
+-- order by bonus;  오름차순 기본값으로 null이 맨 뒤에 옴
 -- order by bonus nulls first; null이 처음에 옴
 -- order by bonus desc  내림차순 기본값으로 null이 맨 앞에 옴
 -- order by bonus nulls last; null이 끝에 옴
