@@ -5,7 +5,7 @@ select student_no 학번, student_name 이름, entrance_date 입학년도 from t
 select professor_name, professor_ssn from tb_professor where length (professor_name) <> 3;
 
 -- 3.
-select professor_name 교수이름, extract(year from sysdate) - '19' || substr(professor_ssn, 1, 2) 나이 from tb_professor where substr(professor_ssn, 8, 1) = '1' order by 나이;
+select professor_name 교수이름, extract(year from sysdate) - to_number('19' || substr(professor_ssn, 1, 2)) 나이 from tb_professor where substr(professor_ssn, 8, 1) = '1' order by 나이;
 -- select professor_name 교수이름, extract(year from sysdate), extract(year from to_date(substr(professor_ssn, 1, 6), 'rrmmdd')) 나이 from tb_professor where substr(professor_ssn, 8, 1) = '1' order by 나이;
 
 -- 4.
@@ -43,3 +43,8 @@ select department_no 학과번호, count(decode(absence_yn, 'Y', 1)) "휴학생 
 select student_name 동명이인, count(student_name) from tb_student  group by student_name having count(student_name) >= 2 order by student_name;
 
 -- 15.
+select substr(term_no, 1, 4), substr(term_no, 5, 2), round(avg(point), 1)
+from tb_grade
+where student_no = 'A112113'
+group by rollup (substr(term_no, 1, 4), substr(term_no, 5, 2))
+order by 1, 2;
