@@ -52,6 +52,15 @@ CREATE USER ddl IDENTIFIED BY ddl;
 GRANT RESOURCE, CONNECT TO ddl;
 ALTER USER ddl DEFAULT TABLESPACE USERS QUOTA UNLIMITED ON USERS;
 
+-- jsp 사용자 계정 생성
+ALTER SESSION SET "_oracle_script" = TRUE;
+CREATE USER jsp IDENTIFIED BY jsp;
+GRANT RESOURCE, CONNECT TO jsp;
+ALTER USER jsp DEFAULT TABLESPACE USERS QUOTA UNLIMITED ON USERS;
 
-
+--------------------------------------------------------------------------------------------------------
+ALTER SESSION set "_oracle_script" = true;
+create user clean identified by clean;
+grant RESOURCE, CONNECT to clean;
+alter user clean default TABLESPACE users quota UNLIMITED on users;
 
