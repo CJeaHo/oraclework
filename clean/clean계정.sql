@@ -6,6 +6,7 @@ CREATE TABLE p_member (
     p_nickname VARCHAR2(30) NOT NULL,
     p_email VARCHAR2(50) NOT NULL,
     p_phone VARCHAR2(20) NOT NULL,
+    p_regdate DATE DEFAULT SYSDATE NOT NULL,
     p_yn NUMBER(3) DEFAULT 0 NOT NULL
 );
 
@@ -43,6 +44,7 @@ CREATE TABLE e_member (
     e_phone VARCHAR2(20) NOT NULL,
     e_bizno VARCHAR2(30) NOT NULL,
     e_depyo VARCHAR2(20) NOT NULL,
+    e_regdate DATE DEFAULT SYSDATE NOT NULL,
     e_yn NUMBER(3) DEFAULT 0 NOT NULL
 );
 
