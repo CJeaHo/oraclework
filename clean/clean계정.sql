@@ -10,7 +10,10 @@ CREATE TABLE p_member (
     p_yn NUMBER(3) DEFAULT 0 NOT NULL
 );
 
-CREATE SEQUENCE p_member_seq START WITH 1 INCREMENT BY 1;
+--drop table p_member;
+
+CREATE SEQUENCE p_member_seq START WITH 1 INCREMENT BY 1 nocache;
+
 
 CREATE OR REPLACE FUNCTION real_p_member_no
 RETURN VARCHAR2
